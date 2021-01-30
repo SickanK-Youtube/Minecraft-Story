@@ -1,0 +1,4 @@
+api-version: 1.16
+name: BuildAHouse
+version: 1.0.0
+main: BuildAHouse.BuildAHouse
