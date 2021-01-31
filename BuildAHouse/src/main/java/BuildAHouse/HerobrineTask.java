@@ -27,8 +27,18 @@ public class HerobrineTask extends BukkitRunnable {
             location.getBlock().setType(Material.AIR);
             counter -= 1;
         } else {
-            player.teleport(initLocation.add(3, 10, 0));
-            this.cancel();
+            try {
+                Thread.sleep(500);
+                var teleportLocation = new Location(player.getWorld(), -98, 78, -10, -25, 4);
+                player.teleport(teleportLocation);
+                player.getInventory().clear();
+                this.cancel();
+            } catch (InterruptedException ex) {
+                var teleportLocation = new Location(player.getWorld(), -98, 78, -10, -25, 4);
+                player.teleport(teleportLocation);
+                player.getInventory().clear();
+                this.cancel();
+            }
         }
     }
 }
